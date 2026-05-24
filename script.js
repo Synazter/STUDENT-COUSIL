@@ -91,6 +91,13 @@ function initRevealAnimations() {
     // Select all reveal variations
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
+    // Saved/copied HTML may already contain "active", which skips the scroll fade.
+    revealElements.forEach(element => {
+        if (!element.closest('.hero')) {
+            element.classList.remove('active');
+        }
+    });
+
     // Use IntersectionObserver for better performance
     const observerOptions = {
         root: null,
@@ -547,229 +554,11 @@ function initInteractiveEffects() {
 
 const coreMembers = [
     {
-        name: "นางสาวกมลทิพย์ คำเมือง",
-        nickname: "บ๋อมแบ๋ม",
-        img: "assets/1769183611640.webp",
-        instagram: "snlino_xe",
+        name: "tung tung tung sahur",
+        nickname: "เปิ้ล",
+        img: "assets/dog.webp",
+        instagram: "",
         tags: ["รองประธานคนที่ 1", "4/13"]
-    },
-    {
-        name: "นายภาณุพงศ์ นาใจคง",
-        nickname: "ปลื้ม",
-
-        img: "assets/optimized/IMG_5740.jpg",
-        instagram: "pn_pg09",
-        tags: ["รองประธานคนที่ 2", "4/5"]
-    },
-    {
-        name: "นางสาวขวัญชนก ธัญญะประกอบ",
-        nickname: "อิ้งค์",
-        img: "assets/Screenshot_20260130_101313_Gallery.jpg",
-        instagram: "llkuink_",
-        tags: ["รองประธานคนที่ 3", "4/13"]
-    },
-    {
-        name: "นางสาวปวริศา บุตเพ็ง",
-        nickname: "ซีน",
-        img: "assets/optimized/IMG_2254.jpg",
-        instagram: "pawaria_xq2",
-        tags: ["รองประธานคนที่ 4", "4/13"]
-    },
-    {
-        name: "นางสาวกัญญาณัท ภาวะโน",
-        nickname: "แก้ว",
-
-        img: "assets/optimized/cute1.jpg",
-        instagram: "kxny4i",
-        tags: ["คณะกรรมการ", "4/1"]
-    },
-    {
-        name: "นางสาวธงศิริยา รัตนวิชา",
-        nickname: "อุ๋งอิ๋ง",
-
-        img: "assets/optimized/IMG_1249.jpg",
-        instagram: "ab00utug",
-        tags: ["คณะกรรมการ", "4/14"]
-    },
-    {
-        name: "นางสาววลัยพรรณ จันทร์คำ",
-        nickname: "มิ้น",
-
-        img: "assets/optimized/DSC09776_Original.jpg",
-        instagram: "meowmin_.t",
-        tags: ["คณะกรรมการ", "4/13"]
-    },
-    {
-        name: "นางสาวกัญญ์ณณัฐ ภาวะโน",
-        nickname: "แก้ม",
-
-        img: "assets/optimized/IMG_4293.jpg",
-        instagram: "kann4.ii",
-        tags: ["คณะกรรมการ", "4/1"]
-    },
-    {
-        name: "นางสาวปรียดา พารี",
-        nickname: "โอปอ",
-        img: "assets/optimized/IMG_0048.jpg",
-        instagram: "_priyada.09",
-        tags: ["คณะกรรมการ", "4/2"]
-    },
-    {
-        name: "นายสิทธิชัย ศรีบัวรินทร์",
-        nickname: "แน็กกี้",
-        img: "assets/optimized/5E442E96-FE9D-48BD-B16D-1CF73003752E.jpg",
-        instagram: "naekkyhahaha",
-        tags: ["คณะกรรมการ", "4/9"]
-    },
-    {
-        name: "นางสาวศุภากร นามวงค์",
-        nickname: "น้ำเหนือ",
-        img: "assets/IMG_5140_1.webp",
-        instagram: "apriltwentyfourr.r",
-        tags: ["คณะกรรมการ", "4/13"]
-    },
-    {
-        name: "นางสาวอุทุมพร แก้วผาบ",
-        nickname: "ออม",
-        img: "assets/optimized/IMG_20260123_225728.jpg",
-        instagram: "sparks.mppp",
-        tags: ["คณะกรรมการ", "4/9"]
-    },
-
-    {
-        name: "นางสาวทองดี กองศรีเกษ",
-        nickname: "ปูเป้",
-        img: "assets/optimized/MEITU_20260122_202651311.jpg",
-        instagram: "_itsoflife27_",
-        tags: ["คณะกรรมการ", "4/3"]
-    },
-
-    {
-        name: "นางสาวภาณิชา สวดสม",
-        nickname: "เฟิร์ส",
-        img: "assets/optimized/IMG_1708.jpg",
-        instagram: "first__ps",
-        tags: ["คณะกรรมการ", "4/5"]
-    },
-
-    {
-        name: "นางสาวกัญญาลักษณ์ สายสุนา",
-        nickname: "มีนา",
-        img: "assets/optimized/IMG_2618.jpg",
-        instagram: "kanyalak._24",
-        tags: ["คณะกรรมการ", "4/2"]
-    },
-
-    {
-        name: "นางสาววรรณ​ภรณ์ ​พิมพ์​สารี​",
-        nickname: "นุ่มนิ่ม",
-        img: "assets/optimized/ไม่มีชื่อ 408_20260122162613.jpg",
-        instagram: "kansirinon",
-        tags: ["คณะกรรมการ", "4/6"]
-    },
-
-    {
-        name: "นางสาวชญานี โยธี",
-        nickname: "แจมมี่",
-        img: "assets/optimized/1.jpg",
-        instagram: "jemmy_cn._.03",
-        tags: ["คณะกรรมการ", "4/6"]
-    },
-
-    {
-        name: "นางสาวธัญรัตน์ หาทอน",
-        nickname: "อันดา",
-        img: "assets/optimized/IMG_4199.jpg",
-        instagram: "shabu_nah",
-        tags: ["คณะกรรมการ", "4/2"]
-    },
-
-    {
-        name: "นายชลทรัพย์ เกษทองมา",
-        nickname: "นน",
-        img: "assets/optimized/Boy3.jpg",
-        instagram: "chocolate18x",
-        tags: ["คณะกรรมการ", "4/9"]
-    },
-
-    {
-        name: "นายอภิรุจ มณีสวาท",
-        nickname: "แชมป์",
-        img: "assets/IMG_20260122_160458_545.webp",
-        instagram: "ap.mn_ch.am",
-        tags: ["คณะกรรมการ", "4/15"]
-    },
-
-    {
-        name: "นางสาวณัฐชา พรมวงค์",
-        nickname: "อ๋อมแอ๋ม",
-        img: "assets/optimized/IMG_2536.jpg",
-        instagram: "natcha_09__",
-        tags: ["คณะกรรมการ", "4/2"]
-    },
-
-    {
-        name: "นางสาวธัญรัตน์ ตาคำนิล",
-        nickname: "แพรว",
-        img: "assets/optimized/IMG_0038.jpg",
-        instagram: "21prxew._",
-        tags: ["คณะกรรมการ", "4/2"]
-    },
-
-    {
-        name: "นางสาวพิชญาดา ละคร",
-        nickname: "พิซซ่า",
-        img: "assets/optimized/IMG_5779.jpg",
-        instagram: "phitchayada3._",
-        tags: ["คณะกรรมการ", "4/3"]
-    },
-
-    {
-        name: "นายเตชิน คำทองทิพย์",
-        nickname: "ไนท์",
-        img: "assets/optimized/IMG_4809.jpg",
-        instagram: "night.owo",
-        tags: ["คณะกรรมการ", "4/15"]
-    },
-
-    {
-        name: "นายพลพัฒน์ น้อยอ่อนโพธิ์",
-        nickname: "เตอร์",
-        img: "assets/optimized/Boy1.jpg",
-        instagram: "pn8tevil",
-        tags: ["คณะกรรมการ", "4/5"]
-    },
-
-    {
-        name: "นายธนาธิป พลซา",
-        nickname: "เกิ้ล",
-        img: "assets/optimized/Boy2.jpg",
-        instagram: "kappkp",
-        tags: ["คณะกรรมการ", "4/15"]
-    },
-
-    {
-        name: "นายกิตติชัย นามทอง",
-        nickname: "โฟม",
-        img: "assets/optimized/IMG_5757.jpg",
-        instagram: "kn19_foam",
-        tags: ["คณะกรรมการ", "4/5"]
-    },
-
-    {
-        name: "นายกิตติภพ จันทร์โยธา",
-        nickname: "ฟีโน่",
-        img: "assets/optimized/IMG_4510.jpg",
-        instagram: "k1tt1p0p",
-        tags: ["คณะกรรมการ", "4/13"]
-    },
-
-    {
-        name: "นางสาวพิชญ์นรี บุตะเขียว",
-        nickname: "เพ้นท์",
-        img: "assets/optimized/lv_0_20260123211910.jpg",
-        instagram: "pxin_tx",
-        tags: ["คณะกรรมการ", "4/13"]
     },
 ];
 
@@ -889,55 +678,6 @@ function initMemberCards() {
 
     // Home page members preview
     coreMembers.forEach(member => window.AddCard(member, false));
-
-    updateMemberCount();
-
-    const viewAllBtn = document.getElementById('btn-view-all');
-    if (viewAllBtn) {
-        viewAllBtn.addEventListener('click', toggleAllMembers);
-    }
-}
-
-function toggleAllMembers() {
-    const viewAllBtn = document.getElementById('btn-view-all');
-    const additionalCards = document.querySelectorAll('.additional-member');
-
-    if (!isShowingAll) {
-        // Show all members with staggered animation
-        additionalMembers.forEach((member, index) => {
-            setTimeout(() => {
-                window.AddCard(member, true);
-            }, index * 100);
-        });
-
-        viewAllBtn.innerHTML = '<i class="fa-solid fa-users-slash"></i><span>ซ่อนสมาชิกเพิ่มเติม</span>';
-        isShowingAll = true;
-    } else {
-        // Hide additional members with animation
-        additionalCards.forEach((card, index) => {
-            card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px) scale(0.95)';
-            setTimeout(() => card.remove(), 300);
-        });
-
-        viewAllBtn.innerHTML = '<i class="fa-solid fa-users"></i><span>ดูสมาชิกทั้งหมด</span>';
-        isShowingAll = false;
-    }
-
-    // Delay count update for add animation
-    setTimeout(updateMemberCount, isShowingAll ? additionalMembers.length * 100 : 300);
-}
-
-function updateMemberCount() {
-    const countElement = document.getElementById('member-count');
-    const totalMembers = coreMembers.length + additionalMembers.length + 1; // +1 for leader
-    const currentShowing = isShowingAll ? totalMembers : coreMembers.length + 1;
-
-    if (countElement) {
-        // Animate the counter
-        animateCounter(countElement, currentShowing, totalMembers);
-    }
 }
 
 // ===================================================
@@ -1184,19 +924,16 @@ function initInfiniteCarousel() {
     if (items.length === 0) return;
 
     // Clone items to ensure we have enough width for seamless scrolling
-    // We clone the entire set once to create the seamless loop effect
     items.forEach(item => {
         const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true'); // Accessibility
+        clone.setAttribute('aria-hidden', 'true');
         carousel.appendChild(clone);
     });
 
-    // Determine animation duration based on number of items
     // More items = longer duration to keep speed consistent
-    const duration = items.length * 5; // 5s per item approx
+    const duration = items.length * 5;
     carousel.style.animationDuration = `${Math.max(20, duration)}s`;
 }
-
 
 // ===================================================
 // HERO SLIDER FUNCTIONALITY

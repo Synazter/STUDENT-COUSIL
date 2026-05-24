@@ -1,27 +1,28 @@
-/* ===================================================
-   HERO SLIDER
-   =================================================== */
 .hero-slider-container {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
     aspect-ratio: 4/3;
-    /* Maintain a consistent aspect ratio if possible, or inherit from parent */
 }
 
-/* Ensure images fill the container properly */
+
 .hero-image {
     position: relative;
-    /* Ensure text stats can position relative to this if needed */
-    padding: 0 !important;
-    /* Remove any padding that might interfere */
-    background: none !important;
-    /* Remove any previous background */
+    padding: 10px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
     overflow: visible;
-    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: calc(var(--radius-xl) + 10px);
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .hero-slider-wrapper {
@@ -30,13 +31,11 @@
     height: 100%;
     width: 100%;
     gap: 0;
-    /* Critical: Remove any potential gap that causes sliding drift */
 }
 
 .hero-slide {
     width: 100%;
     flex: 0 0 100%;
-    /* Fix width to exactly 100% of parent, no shrinking/growing */
     height: 100%;
     position: relative;
     padding: 0;
@@ -50,10 +49,9 @@
     display: block;
     margin: 0;
     padding: 0;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
 }
 
-/* Navigation Buttons */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -74,7 +72,6 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    /* Hidden by default until hover */
 }
 
 .hero-slider-container:hover .slider-btn {
@@ -140,10 +137,8 @@
     border-radius: 4px;
 }
 
-/* Adjust stats position slightly since detailed image is now moving */
 .hero-floating-stat {
     z-index: 20;
-    /* Ensure stats are above slider */
 }
 
 /* Mobile adjustments */
@@ -152,7 +147,6 @@
         width: 36px;
         height: 36px;
         opacity: 1;
-        /* Always show on mobile */
     }
 
     .prev-btn {
