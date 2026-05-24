@@ -718,7 +718,6 @@ header.scrolled::after {
     visibility: visible;
 }
 
-
 @media (max-width: 768px) {
     .menu-toggle {
         width: 40px;
@@ -1235,7 +1234,7 @@ header.scrolled::after {
 
 @media (max-width: 900px) {
     .hero-responsive {
-        padding-top: 120px;
+        padding-top: 100px;
         flex-direction: column;
         text-align: center;
         gap: 2.5rem;
@@ -1255,6 +1254,8 @@ header.scrolled::after {
 
     /* Make #1 appear on top on mobile */
     .hero-responsive .hero-text h1 .number-one {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         margin-left: 0;
         margin-right: 0;
     }
@@ -1398,18 +1399,22 @@ header.scrolled::after {
 
 .about-text ul {
     margin-bottom: 1.5rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-text li {
-    display: flex;
+    display: grid !important;
+    grid-template-columns: 22px auto;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-    color: var(--text-dark);
+    justify-content: start;
+    column-gap: 10px;
+    width: 100%;
 }
 
 .about-text li i {
+    
     font-size: 1.1rem;
     color: var(--primary-blue);
 }
@@ -2645,7 +2650,7 @@ footer::before {
     }
 
     .about-text li {
-        justify-content: center;
+        justify-content: start;
     }
 
     .leader-card {
@@ -3446,7 +3451,7 @@ html {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         max-width: 100%;
-        margin: 0;
+        margin: 0 auto;
     }
 
     .stat-card {
@@ -3483,7 +3488,7 @@ html {
 
 @media (max-width: 480px) {
     .stats-grid {
-        max-width: 280px;
+        max-width: 340px;
     }
 
     .stat-card {
@@ -4432,6 +4437,22 @@ html {
 }
 
 @media (max-width: 480px) {
+    .hero-responsive {
+        padding-top: 50px;
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-trust-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+
     .carousel-card {
         width: 140px;
         height: 190px;
