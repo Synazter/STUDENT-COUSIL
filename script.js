@@ -1,9 +1,3 @@
-// ===================================================
-// INTHA-NEXT Modern Interactive JavaScript
-// Enhanced animations and interactive effects
-// ===================================================
-
-// Prevent double initialization
 if (window.inthaNextInitialized) {
     console.warn('Intha-NEXT: Already initialized');
 } else {
